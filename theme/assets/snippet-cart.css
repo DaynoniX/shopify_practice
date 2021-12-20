@@ -1,0 +1,8 @@
+.cart-icon svg {
+  width: 30px;
+  height: 30px;
+}
+
+.cart-icon svg path{
+  fill: #fff;
+}

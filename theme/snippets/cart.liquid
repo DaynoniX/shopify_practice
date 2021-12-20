@@ -1,0 +1,14 @@
+<link rel="stylesheet" href="{{ 'snippet-cart.css' | asset_url }}" media="print" onload="this.media='all'">
+{% style %}
+
+{% endstyle %}
+<custom-cart>
+  <div class="cart-icon">
+    {% case settings.cart_icon   %}
+      {% when 'cart_1' %}{% render 'icon-bag' %}
+      {% when 'cart_2' %}{% render 'icon-bag-2' %}
+    {% endcase %}
+  </div>
+</custom-cart>
+
+<script src="{{ 'cart.js' | asset_url }}" defer></script>

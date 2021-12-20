@@ -1,0 +1,19 @@
+<predictive-search class="header__search">
+  <form action='{{ routes.search_url }}' method='get' role='search' class="header__search-form">
+    <input
+      type="search"
+      name="q"
+      id="Search"
+      value="{{ search.terms | escape }}"
+      placeholder="{{ 'general.search.placeholder' | t }}"
+      class="header__search-input"
+    >
+    <input type="hidden" name="options[prefix]" value="last">
+
+    <button type="submit" class="header__search-btn">
+      {% render 'icon-search' %}
+    </button>
+  </form>
+
+  <div class="header__search-results hidden"></div>
+</predictive-search>

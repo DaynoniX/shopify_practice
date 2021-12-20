@@ -130,5 +130,61 @@
         "info": "Will be scaled down to 32 x 32px"
       }
     ]
+  },
+  {
+    "name": "Layout settings",
+    "settings": [
+      {
+        "id": "page_width",
+        "label": "Container width",
+        "type": "text",
+        "default": "1140"
+      },
+      {
+        "id": "page_width_mobile",
+        "label": "Container width for mobile version (input units too)",
+        "type": "text",
+        "default": "90%"
+      },
+      {
+        "id": "page_width_tablet",
+        "label": "Container width for tablet version (input units too)",
+        "type": "text",
+        "default": "90%"
+      },
+      {
+        "id": "breakpoint_tablet",
+        "label": "Breakpoint Tablet",
+        "type": "text",
+        "default": "768"
+      },
+      {
+        "id": "breakpoint_mobile",
+        "label": "Breakpoint Mobile",
+        "type": "text",
+        "default": "480"
+      }
+    ]
+  },
+  {
+    "name": "Icons",
+    "settings": [
+      {
+        "id": "cart_icon",
+        "label": "Cart Icon",
+        "type":  "radio",
+        "options": [
+          {
+            "value": "cart_1",
+            "label": "Cart 1"
+          },
+          {
+            "value": "cart_2",
+            "label": "Cart 2"
+          }
+        ],
+        "default": "cart_1"
+      }
+    ]
   }
 ]

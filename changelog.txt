@@ -1,2 +1,13 @@
+[0.0.1] - 20.12.21
+### Added
+- Stub for ajax cart (it will be a separate class)
+- new icon for cart and possibility to switch them in theme settings
+- stub for banner section
+- possibility to change containers width for each breakpoint
+- possibility to define breakpoints
+
+### Changed
+- in header split navigation into separate snippets
+
 [0.0.0] - 20.12.21
 Initialized new Shopify theme from teams default theme

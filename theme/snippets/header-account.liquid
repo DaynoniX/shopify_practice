@@ -1,0 +1,13 @@
+{% if shop.customer_accounts_enabled %}
+  <span class="header__account header__icon">
+                        {% if template.name == 'account' or template.name == 'order' or template.name == 'addresses' %}
+                          <a href="{{ routes.account_logout_url }}" class="link--text">
+                                Log out
+                            </a>
+                        {% else %}
+                          <a href="{{ routes.account_url }}" class="link--text">
+                                Account
+                            </a>
+                        {% endif %}
+                    </span>
+{% endif %}
