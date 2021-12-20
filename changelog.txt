@@ -1,0 +1,2 @@
+[0.0.0] - 20.12.21
+Initialized new Shopify theme from teams default theme

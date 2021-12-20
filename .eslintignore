@@ -1,0 +1,11 @@
+vendor.js
+*.min.js
+*.chunk.js
+*.test.js
+lazysizes.js
+theme.js
+node_modules
+*.json
+global.js
+fancybox.js
+swiper.min.js

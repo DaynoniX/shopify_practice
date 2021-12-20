@@ -1,0 +1,48 @@
+{
+  "parser": "@babel/eslint-parser",
+  "extends": ["eslint:recommended", "prettier"],
+  "root": true,
+  "parserOptions": {
+    "ecmaVersion": 2018,
+    "requireConfigFile": false
+  },
+  "rules": {
+    "no-useless-escape": 0,
+    "no-else-return": 1,
+    "prettier/prettier": "error"
+  },
+  "plugins": ["prettier"],
+  "env": {
+    "browser": true,
+    "jquery": true,
+    "mongo": true
+  },
+  "globals": {
+    "window": true,
+    "require": true,
+    "expect": true,
+    "jQuery": true,
+    "$": true,
+    "theme": true,
+    "_": true,
+    "enquire": true,
+    "Shopify": true,
+    "google": true,
+    "slate": true,
+    "YT": true,
+    "cryptUrl": true,
+    "CryptoJS": true,
+    "Sentry": true,
+    "lazySizes": true,
+    "lazySizesConfig": true,
+    "CartUtil": true,
+    "Symbol": true,
+    "MicroModal": true,
+    "mealConfigSS": true,
+    "MealCart": true,
+    "MealPlan": true,
+    "QRCode": true,
+    "loadCartUtil": true,
+    "formatMoney": true
+  }
+}

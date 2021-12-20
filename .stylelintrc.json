@@ -1,0 +1,24 @@
+{
+  "extends": [
+    "stylelint-config-standard",
+    "stylelint-order-config-standard",
+    "stylelint-config-prettier"
+  ],
+	"plugins": [
+    "stylelint-scss",
+		"stylelint-order"
+	],
+  "ignore": "local",
+  "rules": {
+    "no-descending-specificity": null,
+    "declaration-colon-newline-after": null,
+    "selector-type-no-unknown": null,
+    "selector-descendant-combinator-no-non-space": null,
+    "property-no-unknown": null,
+    "media-feature-name-no-unknown": null,
+    "number-leading-zero": null,
+    "declaration-block-no-shorthand-property-overrides": null,
+    "selector-pseudo-class-no-unknown": null,
+    "selector-combinator-space-before": null
+  }
+}
