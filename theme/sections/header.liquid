@@ -1,61 +1,68 @@
-<link rel="stylesheet" href="{{ 'component-menu-drawer.css' | asset_url }}" media="print" onload="this.media='all'">
-<link rel="stylesheet" href="{{ 'component-header-search-results.css' | asset_url }}" media="print" onload="this.media='all'">
+<link rel="stylesheet"
+      href="{{ 'component-menu-drawer.css' | asset_url }}"
+      media="print"
+      onload="this.media='all'">
+<link rel="stylesheet"
+      href="{{ 'component-header-search-results.css' | asset_url }}"
+      media="print"
+      onload="this.media='all'">
+<link rel="stylesheet" href="{{ 'snippet-nav-desktop.css' | asset_url }}"
+      media="print"
+      onload="this.media='all'">
 
 <sticky-header class="header-wrapper">
-    <header id="header" class="header" data-id="{{ section.id }}">
-        <div class="container">
-            <div class="header-inner">
-                <a href="{{ routes.root_url }}" class="header__logo">
-                    {%- if section.settings.logo != blank -%}
-                        <div class="header__logo-img">
-                            {% render 'image', image: section.settings.logo %}
-                        </div>
-                    {%- else -%}
-                        {{ shop.name }}
-                    {%- endif -%}
-                </a>
-
-                {% render 'header-search' %}
-
-                <div class="header__icons">
-                    {% render 'header-account' %}
-
-                    <a href="/cart" class="header__cart header__icon">
-                      {% render 'icon-bag' %}
-                      <span class="header__cart-count">{% if cart.item_count > 0 %}{{- cart.item_count -}}{% endif %}</span>
-                    </a>
-
-                    {%- if linklists[section.settings.menu] != blank -%}
-                        {% render 'header-menu' %}
-                    {%- endif -%}
-                </div>
+  <header id="header" class="header" data-id="{{ section.id }}">
+    <div class="container">
+      <div class="header-inner">
+        <a href="{{ routes.root_url }}" class="header__logo">
+          {%- if section.settings.logo != blank -%}
+            <div class="header__logo-img">
+              {% render 'image', image: section.settings.logo %}
             </div>
+          {%- else -%}
+            {{ shop.name }}
+          {%- endif -%}
+        </a>
+
+        <div class="header-nav">
+          {%- if linklists[section.settings.menu] != blank -%}
+            {% render 'header-menu-desktop' %}
+          {%- endif -%}
+
+          {% render 'header-account' %}
+
           {% render 'cart' %}
+
+          {%- if linklists[section.settings.menu] != blank -%}
+            {% render 'header-menu-mobile' %}
+          {%- endif -%}
         </div>
-    </header>
+      </div>
+    </div>
+  </header>
 </sticky-header>
 
 {% schema %}
 {
-  "name": "Header",
-  "settings": [
-    {
-      "type": "image_picker",
-      "id": "logo",
-      "label": "Logo image"
-    },
-    {
-      "type": "link_list",
-      "id": "menu",
-      "default": "main-menu",
-      "label": "Menu"
-    },
-    {
-      "type": "image_picker",
-      "id": "cart_icon",
-      "label": "Upload svg icon for cart"
-    }
-  ]
+"name": "Header",
+"settings": [
+{
+"type": "image_picker",
+"id": "logo",
+"label": "Logo image"
+},
+{
+"type": "link_list",
+"id": "menu",
+"default": "main-menu",
+"label": "Menu"
+},
+{
+"type": "image_picker",
+"id": "cart_icon",
+"label": "Upload svg icon for cart"
+}
+]
 }
 
 {% endschema %}

@@ -1,8 +1,75 @@
-.cart-icon svg {
-  width: 30px;
-  height: 30px;
+custom-cart .cart-icon{
+  position: relative;
+  cursor: pointer;
+  width: max-content;
 }
-
-.cart-icon svg path{
+custom-cart .cart-icon svg {
+  width: 20px;
+  height: 20px;
+}
+custom-cart .cart-icon svg path{
   fill: #fff;
+}
+custom-cart .cart-icon::after{
+  content: attr(data-count);
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  background: #F8A300;
+  border-radius: 50%;
+  width: 15px;
+  height: 15px;
+  font-size: 10px;
+  line-height: 9px;
+  top: -9px;
+  right: -11px;
+}
+custom-cart .popup{
+  position: fixed;
+  opacity: 0;
+  z-index: -100;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  background: #000000e2;
+  transition: 0.2s;
+}
+custom-cart .popup.open{
+  z-index: 1000;
+  opacity: 1;
+  transition: 0.2s;
+}
+custom-cart .popup .cart-popup{
+  width: 300px;
+  background: #ffffff;
+  height: 100vh;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+custom-cart .popup .cart-popup .cart-popup_head{
+  background: #eeeeee;
+  height: 70px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 15px;
+}
+custom-cart .popup .cart-popup .cart-popup_footer{
+  background: #eeeeee;
+  height: 70px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 15px;
+}
+custom-cart .popup .cart-popup .cart-popup_body{
+  height: calc(100vh - 140px);
+  padding: 15px;
+  overflow-y: auto;
 }

@@ -1,0 +1,11 @@
+.header-menu{
+
+}
+.header-menu_list{
+  display: flex;
+}
+@media screen and (max-width: var(--tablet-bp)){
+  .header-menu{
+    display: none;
+  }
+}
