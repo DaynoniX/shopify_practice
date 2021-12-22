@@ -1,6 +1,6 @@
 <link rel="stylesheet" href="{{ 'snippet-cart.css' | asset_url }}" media="print" onload="this.media='all'">
 <custom-cart>
-  <div class="cart-icon" data-count="{{ cart.item_count }}">
+  <div class="cart-icon" data-count="{{ cart.items_count }}">
     {% case settings.cart_icon   %}
       {% when 'cart_1' %}{% render 'icon-bag' %}
       {% when 'cart_2' %}{% render 'icon-bag-2' %}
@@ -12,24 +12,23 @@
         <div class="title">Cart</div>
         <div class="counter">{{ cart.item_count }}</div>
       </div>
-      <div class="cart-popup_body">
+      <form class="cart-popup_body" action="/cart/update.js">
 
-      </div>
+      </form>
       <div class="cart-popup_footer"></div>
     </div>
   </div>
   <template>
-    <div class="cart-item" >
+    <div class="cart-item">
       <input type="hidden"
              class="item_id"
-             name="id_{{ item.index }}"
-             value="{{ item.variant_id }}"
-             form="product-form-{{ section.id }}">
-      <div class="cart-item_img" style="background:  url('{{ item | image_url }}') no-repeat center/cover">
+             name="id_"
+             value=""
+             form="product-form-">
+      <div class="cart-item_img">
       </div>
       <div class="cart-item_info">
         <div class="title">
-          {{ item.title }}
         </div>
         <div class="price">
           <div class="current">{{ item.price | money }}</div>

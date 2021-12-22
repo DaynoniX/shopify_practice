@@ -1,0 +1,37 @@
+<div class="cart-item">
+  <input type="hidden"
+         class="item_id"
+         name="id_{{ item.index }}"
+         value="{{ item.variant_id }}"
+         form="product-form-{{ section.id }}">
+  <div class="cart-item_img" style="background:  url('{{ item | image_url }}') no-repeat center/cover">
+  </div>
+  <div class="cart-item_info">
+    <div class="title">
+      {{ item.title }}
+    </div>
+    <div class="price">
+      <div class="current">{{ item.price | money }}</div>
+      <div class="original">{{ item.variant.compare_at_price | money }}</div>
+    </div>
+    <quantity-input class="quantity custom">
+      <button class="quantity__button no-js-hidden" name="minus" type="button">
+        <span class="visually-hidden">{{ 'products.product.quantity.decrease' | t: product: product.title | escape }}</span>
+        {% render 'icon-minus' %}
+      </button>
+      <input class="quantity__input"
+             type="number"
+             name="quantity_{{ item.index }}"
+             id="Quantity-{{ section.id }}"
+             min="1"
+             value="{{ item.quantity }}"
+             form="product-form-{{ section.id }}"
+      >
+      <button class="quantity__button no-js-hidden" name="plus" type="button">
+        <span class="visually-hidden">{{ 'products.product.quantity.increase' | t: product: product.title | escape }}</span>
+        {% render 'icon-plus' %}
+      </button>
+    </quantity-input>
+  </div>
+  <i class="customIcon icon-trash delete"></i>
+</div>

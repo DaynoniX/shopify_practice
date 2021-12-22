@@ -1,3 +1,10 @@
+[0.0.3] - 22.12.21
+### Added
+- section for cart item (will be deleted because of unnecessarity)
+### Changed
+- extended functionality of cart class
+- added some styles for cart
+
 [0.0.2] - 21.12.21
 ### Added
 -snippet for desktop menu in header
