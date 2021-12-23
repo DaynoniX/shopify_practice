@@ -1,0 +1,4 @@
+.collection{
+  grid-template-columns: var(--col-grid-columns_mob);
+  grid-gap: var(--col-grid-gap-mob);
+}

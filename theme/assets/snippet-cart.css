@@ -30,11 +30,12 @@ custom-cart .popup{
   position: fixed;
   opacity: 0;
   z-index: -100;
-  width: 100vw;
+  width: 100%;
   height: 0;
   top: 0;
   left: 0;
   background: #000000e2;
+  overflow: hidden;
 }
 custom-cart .popup.open{
   z-index: 1000;

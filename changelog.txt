@@ -1,20 +1,32 @@
+[0.0.4] - 23.12.21
+
+### Changed
+- added functionality to use breakpoints defined in theme editor
+- added functionality to asynchronously add products to the cart
+- minor changes for collections and products markup
+
 [0.0.3] - 22.12.21
+
 ### Added
 - section for cart item (will be deleted because of unnecessarity)
 ### Changed
 - extended functionality of cart class
 - added some styles for cart
 
+
 [0.0.2] - 21.12.21
+
 ### Added
 -snippet for desktop menu in header
 ### Removed
 - search bar in header (tmp)
-###Changed
+### Changed
 - extended ajax cart functionality
 - styled ajax cart
 
+
 [0.0.1] - 20.12.21
+
 ### Added
 - Stub for ajax cart (it will be a separate class)
 - new icon for cart and possibility to switch them in theme settings
@@ -26,4 +38,5 @@
 - in header split navigation into separate snippets
 
 [0.0.0] - 20.12.21
+
 Initialized new Shopify theme from teams default theme

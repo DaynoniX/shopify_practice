@@ -34,11 +34,11 @@
     --duration-default: 200ms;
     --duration-long: 500ms;
 
+    /* Layout vars */
+
     --page-width: {{ settings.page_width }}px;
     --page-width-mobile: {{ settings.page_width_mobile }};
     --page-width-tablet: {{ settings.page_width_tablet }};
-    --mobile-bp: {{ settings.breakpoint_mobile }}px;
-    --tablet-bp: {{ settings.breakpoint_tablet }}px;
   }
 
   *,
@@ -88,6 +88,8 @@
 
 <link rel="stylesheet" href="{{ 'base.css' | asset_url }}" media="print" onload="this.media='all'">
 <link rel="stylesheet" href="{{ 'base-new.css' | asset_url }}" media="print" onload="this.media='all'">
+<link rel="stylesheet"  href="{{ 'base-new-tablet.css' | asset_url }}" media="print" onload="this.media='all and (max-width: {{ settings.breakpoint_tablet }}px)'">
+<link rel="stylesheet"  href="{{ 'base-new-mobile.css' | asset_url }}" media="print" onload="this.media='all and (max-width: {{ settings.breakpoint_mobile }}px)'">
 <link rel="stylesheet" href="{{ 'component-product-card.css' | asset_url }}" media="print" onload="this.media='all'">
 {% comment %}<link rel="stylesheet" href="{{ 'swiper.css' | asset_url }}" media="print" onload="this.media='all'">{% endcomment %}
 {% comment %}<link rel="stylesheet" href="{{ 'fancybox.css' | asset_url }}" media="print" onload="this.media='all'">{% endcomment %}

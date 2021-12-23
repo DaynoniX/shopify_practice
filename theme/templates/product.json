@@ -1,4 +1,5 @@
 {
+  "name": "Default product",
   "sections": {
     "main": {
       "type": "main-product",

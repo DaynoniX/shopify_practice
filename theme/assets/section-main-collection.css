@@ -1,0 +1,15 @@
+.collection{
+  display: grid;
+  grid-template-columns: var(--col-grid-columns);
+  grid-gap: var(--col-grid-gap);
+}
+.collection-item{
+
+}
+.collection-item_img{
+
+}
+.collection-item_img img{
+  width: 100%;
+  display: block;
+}

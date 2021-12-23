@@ -3,12 +3,3 @@
   max-width: var(--page-width);
   margin: 0 auto;
 }
-@media screen and (max-width: var(--tablet-bp)){
-  .container{
-    max-width: var(--page-width-tablet);
-  }
-}@media screen and (max-width: var(--mobile-bp)){
-  .container{
-    max-width: var(--page-width-mobile);
-  }
-}

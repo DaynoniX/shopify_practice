@@ -5,16 +5,24 @@ class CustomCart extends HTMLElement {
     this.body = this.querySelector('.cart-popup_body');
     this.popup = this.querySelector('.popup');
     this.icon = this.querySelector('.cart-icon');
+    this.external_indicator = this.querySelector('#external_indicator');
 
     this.icon.addEventListener('click', ()=>this.open());
     this.popup.addEventListener('click', (e)=>this.close(e));
     document.addEventListener('DOMContentLoaded', ()=> this.getCart());
 
     // Observer to catch new entries in cart
-
-    const cartObserver = () =>{
-
-    }
+    const config = {
+      attributes: true
+    };
+    const observer = new MutationObserver(()=>{
+      this.getCart();
+      this.showNotification();
+      observer.disconnect();
+      this.external_indicator.dataset.changed = '0';
+      observer.observe(this.external_indicator, config);
+    });
+    observer.observe(this.external_indicator, config);
   }
   open(){
       this.popup.classList.add('open');
@@ -33,8 +41,10 @@ class CustomCart extends HTMLElement {
       .then((response) => response.json())
       .then(data => {
         data.items.forEach((item, index) => this.addItem(item, index));
-        this.icon.dataset.count = data.item_count;
         this.querySelector('.cart-popup_head .counter').innerHTML = data.item_count;
+        if (this.icon.dataset.count !== data.item_count && this.icon.dataset.count !== null){
+          this.icon.dataset.count = data.item_count;
+        }
       })
       .then(()=> {
         this.quantity = this.querySelectorAll(".quantity input.quantity__input");
@@ -47,6 +57,7 @@ class CustomCart extends HTMLElement {
           }
         });
       })
+      .catch(err => console.log(err))
   }
   addItem(data, index){
     const item = this.template.content.cloneNode(true);
@@ -81,11 +92,14 @@ class CustomCart extends HTMLElement {
       this.getCart();
       this.body.classList.remove('loading');
     }
-  };
+  }
   clean(){
     fetch('/cart/clear.js')
       .then(response => response.json())
       .then(()=> this.getCart())
-  };
+  }
+  showNotification(){
+    console.log('new item added')
+  }
 }
 customElements.define('custom-cart', CustomCart);
