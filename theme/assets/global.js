@@ -206,6 +206,7 @@ function formatMoney(cents, format) {
 class StickyHeader extends HTMLElement {
   constructor() {
     super();
+    this.wrapper = this.querySelector('.header-wrapper');
   }
 
   connectedCallback() {
@@ -244,9 +245,18 @@ class StickyHeader extends HTMLElement {
 
     if (scrollTop > this.currentScrollTop && scrollTop > this.headerBounds.bottom) {
       requestAnimationFrame(this.hide.bind(this));
+      if(this.classList.contains('transparent')){
+        this.classList.remove('transparent');
+      }
     } else if (scrollTop < this.currentScrollTop && scrollTop > this.headerBounds.bottom) {
       requestAnimationFrame(this.reveal.bind(this));
+      if(this.classList.contains('transparent')){
+        this.classList.remove('transparent');
+      }
     } else if (scrollTop <= this.headerBounds.top) {
+      if(this.classList.contains('transparent')){
+        this.classList.add('transparent');
+      }
       requestAnimationFrame(this.reset.bind(this));
     }
 

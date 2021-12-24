@@ -2,10 +2,12 @@ custom-cart .cart-icon{
   position: relative;
   cursor: pointer;
   width: max-content;
+  margin-right: 11px;
 }
 custom-cart .cart-icon svg {
   width: 20px;
   height: 20px;
+  display: block;
 }
 custom-cart .cart-icon svg path{
   fill: #fff;

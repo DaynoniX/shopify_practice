@@ -20,6 +20,18 @@
         "default": "assistant_n4",
         "label": "t:settings_schema.typography.settings.type_body_font.label",
         "info": "t:settings_schema.typography.settings.type_body_font.info"
+      },
+      {
+        "type": "font_picker",
+        "id": "header_nav_font",
+        "default": "assistant_n4",
+        "label": "Font of header navigation"
+      },
+      {
+        "type": "font_picker",
+        "id": "title_base_font",
+        "default": "montserrat_n4",
+        "label": "Main title font"
       }
     ]
   },
@@ -163,6 +175,11 @@
         "label": "Breakpoint Mobile",
         "type": "text",
         "default": "480"
+      },
+      {
+        "id": "page_header_transparent",
+        "type": "page",
+        "label": "Select pages with transparent header"
       }
     ]
   },
@@ -184,6 +201,53 @@
           }
         ],
         "default": "cart_1"
+      }
+    ]
+  },
+  {
+    "name": "Color Settings",
+    "settings": [
+      {
+        "id": "color_main",
+        "label": "Main color",
+        "type": "color",
+        "default": "#000000"
+      },
+      {
+        "id": "color_secondary",
+        "label": "Secondary color",
+        "type": "color",
+        "default": "#ffffff"
+      },
+      {
+        "id": "color_accent",
+        "label": "Accent color",
+        "type": "color",
+        "default": "#ffffff"
+      },
+      {
+        "id": "color_active",
+        "label": "Active color",
+        "type": "color",
+        "default": "#034581"
+      },
+      {
+        "id": "color_font_main",
+        "label": "Main fonts color",
+        "type": "color",
+        "default": "#222222"
+      },
+      {
+        "id": "color_font_accent",
+        "label": "Accent fonts color",
+        "type": "color",
+        "default": "#ffffff"
+      },
+      {
+        "id": "color_font_secondary",
+        "label": "Secondary fonts color",
+        "type": "color",
+        "default": "#000000"
       }
     ]
   }

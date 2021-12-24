@@ -1,3 +1,15 @@
+{% style %}
+  :root{
+    --logo-size: {{ section.settings.logo_size }}px;
+    --nav-gap-size: {{ section.settings.nav_gap }}px;
+    --menu-padding: {{ section.settings.menu_padding }}px;
+    --header-height: {{ section.settings.header_height }};
+  }
+{% endstyle %}
+<link rel="stylesheet"
+      href="{{ 'section-header.css' | asset_url }}"
+      media="print"
+      onload="this.media='all'">
 <link rel="stylesheet"
       href="{{ 'component-menu-drawer.css' | asset_url }}"
       media="print"
@@ -6,17 +18,14 @@
       href="{{ 'component-header-search-results.css' | asset_url }}"
       media="print"
       onload="this.media='all'">
-<link rel="stylesheet" href="{{ 'snippet-nav-desktop.css' | asset_url }}"
-      media="print"
-      onload="this.media='all'">
 
-<sticky-header class="header-wrapper">
+<sticky-header class="header-wrapper {% if template == 'index' %}transparent{% endif %}">
   <header id="header" class="header" data-id="{{ section.id }}">
     <div class="container">
       <div class="header-inner">
-        <a href="{{ routes.root_url }}" class="header__logo">
+        <a href="{{ routes.root_url }}" class="header-logo">
           {%- if section.settings.logo != blank -%}
-            <div class="header__logo-img">
+            <div class="header-logo_img">
               {% render 'image', image: section.settings.logo %}
             </div>
           {%- else -%}
@@ -27,15 +36,14 @@
         <div class="header-nav">
           {%- if linklists[section.settings.menu] != blank -%}
             {% render 'header-menu-desktop' %}
+            {% render 'header-menu-mobile' %}
+
           {%- endif -%}
 
           {% render 'header-account' %}
 
           {% render 'cart' %}
 
-          {%- if linklists[section.settings.menu] != blank -%}
-            {% render 'header-menu-mobile' %}
-          {%- endif -%}
         </div>
       </div>
     </div>
@@ -44,25 +52,43 @@
 
 {% schema %}
 {
-"name": "Header",
-"settings": [
-{
-"type": "image_picker",
-"id": "logo",
-"label": "Logo image"
-},
-{
-"type": "link_list",
-"id": "menu",
-"default": "main-menu",
-"label": "Menu"
-},
-{
-"type": "image_picker",
-"id": "cart_icon",
-"label": "Upload svg icon for cart"
+  "name": "Header",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "logo",
+      "label": "Logo image"
+    },
+    {
+      "type": "link_list",
+      "id": "menu",
+      "default": "main-menu",
+      "label": "Menu"
+    },
+    {
+      "id": "logo_size",
+      "label": "Logo size (px)",
+      "type": "number",
+      "default": 150
+    },
+    {
+      "id": "nav_gap",
+      "label": "Gap between nav elements (px)",
+      "type": "number",
+      "default": 15
+    },
+    {
+      "id": "menu_padding",
+      "label": "Menu elements horizontal padding (px)",
+      "type": "number",
+      "default": 10
+    },
+    {
+      "id": "header_height",
+      "label": "Headers height (px)",
+      "type": "text",
+      "default": "90px"
+    }
+  ]
 }
-]
-}
-
 {% endschema %}

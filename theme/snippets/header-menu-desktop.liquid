@@ -1,28 +1,29 @@
-<nav class="header-menu">
-  <ul class="header-menu_list">
-    {%- for link in linklists[section.settings.menu].links -%}
-      {%- if link.links != blank -%}
-        <li class="header-menu_item parent">
-        <a href="{{ link.url }}" class="header-menu_link{% if link.current %} active{% endif %}"{% if link.current %} aria-current="page"{% endif %}>
-          {{ link.title | escape }}
-        </a>
-        <ul class="header-menu_childlist">
-          {%- for childlink in link.links -%}
-            <li class="header-menu_item child">
-              <a href="{{ childlink.url }}" class="header-menu_child{% if childlink.current %} active{% endif %}"{% if childlink.current %} aria-current="page"{% endif %}>
-                {{ childlink.title | escape }}
-              </a>
-            </li>
-          {%- endfor -%}
-        </ul>
-
-      {% else %}
-        <li class="header-menu_item">
-        <a href="{{ link.url }}" class="header-menu_link{% if link.current %} active{% endif %}"{% if link.current %} aria-current="page"{% endif %}>
-          {{ link.title | escape }}
-        </a>
-      {% endif %}
-      </li>
-    {% endfor %}
-  </ul>
-</nav>
+<div class="header-nav_item desktop">
+  <nav class="header-menu ">
+    <ul class="header-menu_list">
+      {%- for link in linklists[section.settings.menu].links -%}
+        {%- if link.links != blank -%}
+          <li class="header-menu_item parent">
+            <a href="{{ link.url }}" class="header-menu_link{% if link.current %} active{% endif %}"{% if link.current %} aria-current="page"{% endif %}>
+              {{ link.title | escape }}
+            </a>
+            <ul class="header-menu_childlist">
+              {%- for childlink in link.links -%}
+                <li class="header-menu_item child">
+                  <a href="{{ childlink.url }}" class="header-menu_child{% if childlink.current %} active{% endif %}"{% if childlink.current %} aria-current="page"{% endif %}>
+                    {{ childlink.title | escape }}
+                  </a>
+                </li>
+              {%- endfor -%}
+            </ul>
+        {% else %}
+          <li class="header-menu_item">
+            <a href="{{ link.url }}" class="header-menu_link{% if link.current %} active{% endif %}"{% if link.current %} aria-current="page"{% endif %}>
+              {{ link.title | escape }}
+            </a>
+        {% endif %}
+        </li>
+      {% endfor %}
+    </ul>
+  </nav>
+</div>

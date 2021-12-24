@@ -807,10 +807,7 @@ summary::-webkit-details-marker {
   color: var(--color-accent);
 }
 
-/* Header menu drawer */
-header-drawer {
-  margin-left: 1.6rem;
-}
+
 
 @media screen and (min-width: 990px) {
   header-drawer {

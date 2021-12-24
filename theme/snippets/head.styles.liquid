@@ -1,3 +1,6 @@
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
 {%- liquid
   assign body_body_light = settings.type_body_font | font_modify: 'weight', '-100'
   assign body_body_medium = settings.type_body_font | font_modify: 'weight', '+100'
@@ -16,16 +19,14 @@
 
   :root {
     --font-body-family: {{ settings.type_body_font.family }}, {{ settings.type_body_font.fallback_families }};
+    --font-header-nav: {{ settings.header_nav_font.family }}, {{ settings.header_nav_font.fallback_families }};
+    --font-title-base: {{ settings.title_base_font.family }}, {{ settings.title_base_font.fallback_families }};
 
     --color-dark: #262523;
     --color-accent: #4BAE4F;
     --color-grey: #f5f4f4;
     --color-white: #fff;
-    --color-success: #1e892a;
-    --color-error: #d10300;
-    --color-warning: #c87100;
-    --color-base-text: #6c7b84;
-    --color-secondary-text: #6c7b84;
+
     --color-border: #e4e6e8;
     --color-button-background: #262523;
     --color-button-text: #fff;
@@ -39,6 +40,21 @@
     --page-width: {{ settings.page_width }}px;
     --page-width-mobile: {{ settings.page_width_mobile }};
     --page-width-tablet: {{ settings.page_width_tablet }};
+
+    /* Color variables */
+    --color-block-main: {{ settings.color_main }};
+    --color-block-accent:{{ settings.color_accent }};
+    --color-block-secondary:{{ settings.color_secondary }};
+    --color-text-base: {{ settings.color_font_main }};
+    --color-text-secondary: {{ settings.color_font_secondary }};
+    --color-text-accent: {{ settings.color_font_accent }};
+    --color-active: {{ settings.color_active }};
+    --color-success: #1e892a;
+    --color-error: #d10300;
+    --color-warning: #c87100;
+
+
+
   }
 
   *,

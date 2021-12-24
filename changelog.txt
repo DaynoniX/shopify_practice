@@ -1,3 +1,23 @@
+[0.0.5] - 24.12.21
+
+### Added
+- new styles for header
+- new styles for collection pages
+- new possibilities in theme settings:
+   1. New typography options
+   2. Color options
+   3. Possibility to choose a page with specific headers options (will be reworked)
+- new options in theme editor for Header section
+- new fonts from google fonts (Lato and Montserrat)
+
+### Changed
+- changed script for sticky header (new possibility to change headers options regarding class)
+- removed unused rules in base.css
+- removed breadcrumbs from theme layout (will be added to footer)
+
+### Removed
+- unused css file
+
 [0.0.4] - 23.12.21
 
 ### Changed

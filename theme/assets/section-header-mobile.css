@@ -1,0 +1,24 @@
+.header-wrapper{
+  background: var(--main-block-color);
+}
+.header-logo{
+
+}
+.header-logo_img{
+  width: var(--logo-size);
+}
+.header-logo_img img{
+  width: 100%;
+  display: block;
+  height: auto;
+}
+.header-nav{
+  display: flex;
+  align-items: center;
+}
+.header-nav_item{
+  margin-right: var(--nav-gap-size);
+}
+.header-nav_item:last-child{
+  margin-right: 0;
+}
